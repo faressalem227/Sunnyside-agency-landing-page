@@ -1,0 +1,62 @@
+@use "../abstract" as var;
+.Testimonials {
+  height: 500px;
+  .container {
+    display: block;
+    & > {
+      h1 {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        margin: 120px auto 70px;
+        width: fit-content;
+        color: hsl(210, 4%, 67%);
+        letter-spacing: 6px;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+
+        .Emily {
+          .PersonalImg {
+            background-image: url(images/image-emily.jpg);
+          }
+        }
+
+        .Thomas {
+          .PersonalImg {
+            background-image: url(images/image-thomas.jpg);
+          }
+        }
+
+        .Jennie {
+          .PersonalImg {
+            background-image: url(images/image-jennie.jpg);
+          }
+
+          .job {
+            margin-bottom: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include var.breakpoints(mobile) {
+  .Testimonials {
+    height: fit-content;
+    .container {
+      > div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 80px;
+        h1 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

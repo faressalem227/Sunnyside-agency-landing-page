@@ -1,0 +1,69 @@
+@use "../abstract" as var;
+
+.Skills {
+  .container {
+    div {
+      height: 527.5px;
+      padding: 20px;
+    }
+
+    p {
+      font-family: var.$barlow;
+      font-size: 20px;
+      text-align: center;
+      width: 418px;
+      margin: auto;
+    }
+
+    .graphicDesign {
+      background-image: url(images/desktop/image-graphic-design.jpg);
+      h4 {
+        color: var.$DarkDesaturatedCyan;
+      }
+
+      p {
+        color: var.$DarkDesaturatedCyan;
+      }
+      @include var.breakpoints(mobile) {
+        background-image: url(images/mobile/image-graphic-design.jpg);
+      }
+    }
+
+    .Photography {
+      background-image: url(images/desktop/image-photography.jpg);
+      h4 {
+        color: var.$DarkBlue;
+      }
+
+      p {
+        color: var.$DarkBlue;
+      }
+
+      @include var.breakpoints(mobile) {
+        background-image: url(images/mobile/image-photography.jpg);
+      }
+    }
+
+    @include var.breakpoints(mobile) {
+      p {
+        width: 344px;
+        font-size: 18px;
+      }
+
+      div {
+        height: 850px;
+      }
+    }
+  }
+}
+
+@include var.breakpoints(medium) {
+  .Skills {
+    .container {
+      p {
+        font-size: 15px;
+        width: 329px;
+      }
+    }
+  }
+}

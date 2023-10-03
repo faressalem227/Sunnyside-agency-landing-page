@@ -1,0 +1,62 @@
+@use "../abstract" as var;
+footer {
+  margin-bottom: -2px;
+  background-color: var.$DarkModeratecCyan;
+  .container {
+    svg {
+      fill: currentColor;
+      color: var.$DarkDesaturatedCyan;
+    }
+
+    .footerLogo {
+      width: fit-content;
+      margin: auto;
+      padding-top: 40px;
+    }
+
+    .ilustrations {
+      width: fit-content;
+      margin: 40px auto;
+      padding-left: 33px;
+      div {
+        color: var.$DarkDesaturatedCyan;
+        display: inline-block;
+        margin-right: 20px;
+        font-family: var.$barlow;
+        font-size: 20px;
+        &:hover {
+          color: white;
+          cursor: pointer;
+        }
+        @include var.breakpoints(mobile) {
+          margin-right: 13px;
+        }
+      }
+    }
+
+    .socialIcons {
+      width: fit-content;
+      margin: 60px auto;
+      padding-left: 36px;
+      color: var.$DarkDesaturatedCyan;
+      svg {
+        margin-right: 30px;
+        color: var.$DarkDesaturatedCyan;
+        &:hover {
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .attribution {
+      width: fit-content;
+      margin: auto;
+      color: var.$DarkDesaturatedCyan;
+      font-family: var.$barlow;
+      @include var.breakpoints(mobile) {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@use "../abstract" as var;
+.Active {
+  display: block !important;
+}
+@include var.breakpoints(mobile) {
+}
+header {
+  background-image: url(images/desktop/image-header.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1100px;
+  position: relative;
+  @include var.breakpoints(mobile) {
+    background-image: url(images/mobile/image-header.jpg);
+  }
+
+  .container {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      & {
+        .logo {
+          margin-top: 18px;
+          padding-left: 15px;
+          @include var.breakpoints(small) {
+            margin-top: 27px;
+          }
+        }
+
+        .iconList {
+          display: none;
+          margin-top: 25px;
+          @include var.breakpoints(mobile) {
+            display: block;
+            padding-right: 15px;
+          }
+        }
+
+        ul {
+          margin-right: 30px;
+          @include var.breakpoints(mobile) {
+            // overflow-x: hidden;
+            width: 97%;
+            height: 220px;
+            position: absolute;
+            right: -23px;
+            top: 55px;
+            background-color: white;
+            border-radius: 5px;
+            display: none;
+
+            &::after {
+              content: "";
+              position: absolute;
+              border: 18px solid;
+              border-color: transparent transparent white;
+              right: 1px;
+              top: -32px;
+            }
+          }
+          li {
+            font-family: var.$barlow;
+            font-size: 13px;
+            display: inline-block;
+            margin-right: 18px;
+            color: white;
+            @include var.breakpoints(mobile) {
+              display: block;
+              color: var.$Verydarkgrayishblue;
+              text-align: center;
+              margin-top: 25px;
+              font-size: 16px;
+            }
+          }
+        }
+
+        .Contact button {
+          font-family: var.$Fraunces;
+          text-transform: uppercase;
+          font-weight: 900;
+          background-color: white;
+          padding: 15px;
+          border: transparent 0px;
+          border-radius: 70px;
+          color: black;
+
+          &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #ffffff5c;
+          }
+
+          @include var.breakpoints(mobile) {
+            background-color: var.$Yellow;
+          }
+        }
+      }
+    }
+    h1 {
+      color: white;
+      font-family: var.$Fraunces;
+      font-weight: 700;
+      word-spacing: 5px;
+      font-size: 72px;
+      letter-spacing: 6px;
+      text-align: center;
+      margin-top: 190px;
+    }
+    .arrow {
+      position: absolute;
+      left: 50%;
+      bottom: 464px;
+      transform: translate(-50%, 0);
+      @include var.breakpoints(mobile) {
+        bottom: 353px;
+      }
+    }
+  }
+}

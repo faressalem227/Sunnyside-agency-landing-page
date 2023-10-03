@@ -1,0 +1,68 @@
+@use "../abstract" as var;
+.Transform {
+  .container {
+    > {
+      .TransformImg {
+        background-image: url(images/desktop/image-transform.jpg);
+        order: 1;
+        @include var.breakpoints(mobile) {
+          background-image: url(images/mobile/image-transform.jpg);
+          width: 100%;
+          order: 0;
+        }
+      }
+      .TransformContent {
+        order: 0;
+        p {
+          width: 513px;
+        }
+        .TransBtn::after {
+          background-color: var.$Yellow;
+        }
+        @include var.breakpoints(mobile) {
+          order: 1;
+          p {
+            width: 331px;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include var.breakpoints(Large) {
+  .Transform {
+    .container > {
+      .TransformContent {
+        p {
+          width: 380px;
+        }
+      }
+    }
+  }
+}
+
+@include var.breakpoints(medium) {
+  .Transform {
+    .container > {
+      .TransformContent {
+        p {
+          width: 268px;
+        }
+      }
+    }
+  }
+}
+
+@include var.breakpoints(small) {
+  .Transform {
+    .container > {
+      .TransformContent {
+        p {
+          width: 141px;
+        }
+      }
+    }
+  }
+}

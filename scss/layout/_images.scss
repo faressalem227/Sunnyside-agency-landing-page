@@ -1,0 +1,92 @@
+@use "../abstract" as var;
+.Images {
+  height: fit-content;
+  .container {
+    height: fit-content;
+    div {
+      height: 447px;
+      width: 25%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include var.breakpoints(XLarge) {
+        height: 354px;
+      }
+    }
+  }
+}
+.milkImg {
+  background-image: url(images/desktop/image-gallery-milkbottles.jpg);
+}
+
+.orangeImg {
+  background-image: url(images/desktop/image-gallery-orange.jpg);
+}
+
+.coneImg {
+  background-image: url(images/desktop/image-gallery-cone.jpg);
+}
+
+.sugarImg {
+  background-image: url(images/desktop/image-gallery-sugarcubes.jpg);
+}
+
+@include var.breakpoints(mobile) {
+  .Images {
+    .container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      div {
+        height: 200px;
+        width: 50%;
+        background-size: cover;
+      }
+    }
+  }
+
+  .milkImg {
+    background-image: url(images/mobile/image-gallery-milkbottles.jpg);
+  }
+
+  .orangeImg {
+    background-image: url(images/mobile/image-gallery-orange.jpg);
+  }
+
+  .coneImg {
+    background-image: url(images/mobile/image-gallery-cone.jpg);
+  }
+
+  .sugarImg {
+    background-image: url(images/mobile/image-gallery-sugar-cubes.jpg);
+  }
+}
+
+@include var.breakpoints(Large) {
+  .Images {
+    .container {
+      div {
+        height: 298px;
+      }
+    }
+  }
+}
+
+@include var.breakpoints(medium) {
+  .Images {
+    .container {
+      div {
+        height: 223px;
+      }
+    }
+  }
+}
+
+@include var.breakpoints(small) {
+  .Images {
+    .container {
+      div {
+        height: 168px;
+      }
+    }
+  }
+}

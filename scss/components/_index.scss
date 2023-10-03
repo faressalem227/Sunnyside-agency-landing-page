@@ -1,0 +1,211 @@
+@use "../abstract" as var;
+
+section {
+  .container {
+    display: flex;
+    @include var.breakpoints(mobile) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      // overflow-x: hidden;
+    }
+  }
+}
+
+.sectionContent {
+  width: 50%;
+  padding: 70px;
+  @include var.breakpoints(mobile) {
+    width: 100%;
+    padding: 0px;
+    height: 430px;
+  }
+}
+
+.sectionImg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  width: 50%;
+  @include var.breakpoints(mobile) {
+    width: 100%;
+    height: 330px;
+  }
+}
+
+.headerText {
+  font-family: var.$Fraunces;
+  font-weight: 800;
+  font-size: 40px;
+  color: var.$VeryDarkDesaturatedBlue;
+  @include var.breakpoints(mobile) {
+    text-align: center;
+    font-size: 36px;
+    margin: 76px auto 36px;
+  }
+  @include var.breakpoints(XLarge) {
+    font-size: 35px;
+  }
+}
+.Paragraph {
+  font-family: var.$barlow;
+  color: var.$Verydarkgrayishblue;
+  font-size: 20px;
+  width: 513px;
+  margin-bottom: 73px;
+}
+
+@include var.breakpoints(mobile) {
+  .Paragraph {
+    font-size: 18px;
+    width: 362px;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.sectionBtn {
+  background-color: white;
+  font-family: var.$Fraunces;
+  color: black;
+  border: none;
+  font-size: 25px;
+  position: relative;
+  display: block;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    opacity: 0.3;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include var.breakpoints(mobile) {
+    margin-top: 29px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+h4 {
+  font-family: var.$Fraunces;
+  font-size: 30px;
+  font-weight: 900;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 284px;
+  @include var.breakpoints(mobile) {
+    margin-top: 584px;
+  }
+}
+
+.PersonalImg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 0px auto 54px;
+  @include var.breakpoints(mobile) {
+    margin: 0px auto 30px;
+  }
+}
+
+.testimonial {
+  font-family: var.$barlow;
+  color: var.$Verydarkgrayishblue;
+  font-size: 20px;
+  width: 413px;
+  text-align: center;
+  margin-bottom: 30px;
+  @include var.breakpoints(mobile) {
+    width: 333px;
+    font-size: 18px;
+  }
+}
+
+.name {
+  font-family: var.$Fraunces;
+  font-size: 20px;
+  color: var.$VeryDarkDesaturatedBlue;
+  width: fit-content;
+  margin: 0 auto 20px;
+  @include var.breakpoints(mobile) {
+    font-size: 18px;
+    margin: 0 auto 7px;
+  }
+}
+
+.job {
+  font-family: var.$barlow;
+  color: var.$Darkgrayishblue;
+  width: fit-content;
+  margin: auto;
+  @include var.breakpoints(mobile) {
+    font-size: 15px;
+  }
+}
+
+@include var.breakpoints(XLarge) {
+  .testimonial {
+    font-size: 18px;
+    width: 366px;
+  }
+  .Paragraph {
+    font-size: 18px;
+    width: 372px;
+  }
+}
+
+@include var.breakpoints(Large) {
+  .testimonial {
+    font-size: 15px;
+    width: 318px;
+  }
+  .Paragraph {
+    font-size: 16px;
+    width: 381px;
+  }
+  .sectionBtn {
+    font-size: 25px;
+  }
+}
+
+@include var.breakpoints(medium) {
+  .Paragraph {
+    font-size: 14px;
+    width: 268px;
+  }
+  .headerText {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 25px;
+  }
+  .sectionBtn {
+    font-size: 20px;
+  }
+
+  .testimonial {
+    font-size: 15px;
+    width: 247px;
+  }
+  .name {
+    font-size: 15px;
+  }
+
+  .job {
+    font-size: 15px;
+  }
+}
